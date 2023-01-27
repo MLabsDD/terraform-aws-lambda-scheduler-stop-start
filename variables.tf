@@ -73,6 +73,12 @@ variable "rds_schedule" {
   default     = false
 }
 
+variable "eks_schedule" {
+  description = "Enable scheduling on eks resources"
+  type        = any
+  default     = false
+}
+
 variable "cloudwatch_alarm_schedule" {
   description = "Enable scheduleding on cloudwatch alarm resources"
   type        = any
@@ -83,4 +89,16 @@ variable "tags" {
   description = "Custom tags on aws resources"
   type        = map(any)
   default     = null
+}
+
+variable "scaled_up_eks_nodes" {
+  description = "Regular configuration of EKS nodes (min, max, desired)"
+  type        = list(number)
+  default     = [3,12,6]
+}
+
+variable "scaled_down_eks_nodes" {
+  description = "Scaled down configuration of EKS nodes (min, max, desired)"
+  type        = list(number)
+  default     = [0,1,0]
 }
