@@ -11,11 +11,6 @@ from botocore.exceptions import ClientError
 from scheduler.exceptions import eks_exception
 from scheduler.filter_resources_by_tags import FilterByTags
 
-cluster_name=""
-min_size=3
-max_size=3
-desiredSize=3
-
 class EksScheduler(object):
     """Abstract eks Service scheduler in a class."""
 
